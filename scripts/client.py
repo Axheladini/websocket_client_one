@@ -28,7 +28,7 @@ import time
 import cProfile
 
 
-msg = { "header":{ "from": "user-1", "from_type": "device", "to": "user-1", "to_type": "vue", "msg_type": "pong", "hardware_id": "4", "sensor_id":"33"}, "body":{ "action": "1" }}
+msg = { "header":{ "from": "user-3", "from_type": "device", "to": "user-3", "to_type": "vue", "msg_type": "pong", "hardware_id": "43", "sensor_id":"35"}, "body":{ "action": "1" }}
 
 
 
@@ -98,7 +98,7 @@ def is_json(myjson):
 
 if __name__ == "__main__":
     websocket.enableTrace(True)
-    ws = websocket.WebSocketApp("ws://nginx/ws/?id=user-1&type=device&hardware=4",
+    ws = websocket.WebSocketApp("ws://nginx/ws/?id=user-3&type=device&hardware=43",
                               on_open=on_open,
                               on_message=on_message,                                                                                                                                                                                                  on_error=on_error,
                               on_close=on_close)
