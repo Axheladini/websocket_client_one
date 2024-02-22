@@ -40,6 +40,11 @@ def on_message(ws, message):
      try:
         decrypted = secureMSG.decrypt(message).decode("utf-8", "ignore")
         json_loads = json.loads(decrypted)
+        print("Is decrypted!")
+        print(is_json(decrypted))
+        print(json_loads["header"]["to"])
+        print(json_loads["body"]["action"])
+        print("-------------------------------")
         if is_json(decrypted):
             if json_loads["header"]["msg_type"] == "ping pong":
               msg["header"]["msg_type"] = "ping pong"
@@ -64,6 +69,8 @@ def on_message(ws, message):
               json_verify_msg= json.dumps(msg)
               encryptedVerifyMSG = secureMSG.enc(json_verify_msg)
               ws.send(encryptedVerifyMSG)
+            elif json_loads["body"]["action"] == "save":
+              print("| Received schedule to save |")
             else:
               print(json_loads)
         else: 
