@@ -30,8 +30,6 @@ import cProfile
 
 msg = { "header":{ "from": "user-3", "from_type": "device", "to": "user-3", "to_type": "vue", "msg_type": "pong", "hardware_id": "43", "sensor_id":"35"}, "body":{ "action": "1" }}
 
-
-
 def on_message(ws, message):
      print("----------------------------------")
      print("| message received to client!    |")
@@ -71,6 +69,9 @@ def on_message(ws, message):
               ws.send(encryptedVerifyMSG)
             elif json_loads["body"]["action"] == "save":
               print("| Received schedule to save |")
+              with open('data.json', 'w') as doc:
+                   json.dump(json_loads, doc, indent=2)
+              print("Json file saved!")
             else:
               print(json_loads)
         else: 
