@@ -35,6 +35,7 @@ RUN pip3 install websocket-client\
     websocket-client\
     pycryptodome\
     rel\
+    CProfileV\
     bs4
 
 #START SUPERVISOR
