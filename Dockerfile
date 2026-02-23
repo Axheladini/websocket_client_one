@@ -24,18 +24,17 @@ RUN apt-get update && apt-get -y install cron \
 
 #INSTALL PYTHON DEPENDENCIES
 #--------------------------------
-RUN pip3 install websocket-client\
-    selenium\
-    termcolor\
-    python-dotenv\
-    tornado\
-    requests\
-    jsonpickle\
-    dill\
-    websocket-client\
-    pycryptodome\
-    rel\
-    CProfileV\
+RUN pip3 install --break-system-packages websocket-client\
+     selenium \
+    termcolor \
+    python-dotenv \
+    tornado \
+    requests \
+    jsonpickle \
+    dill \
+    pycryptodome \
+    rel \
+    CProfileV \
     bs4
 
 #START SUPERVISOR
