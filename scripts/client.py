@@ -29,7 +29,7 @@ import cProfile
 
 
 
-SERVER_URL = "ws://87.106.219.162/ws/?id=agonxheladini001@gmail.com&type=device&hardware=48"  # Change to your server
+SERVER_URL = "wss://app.raino.info/ws/?id=agonxheladini001@gmail.com&type=device&hardware=48"  # Change to your server
 RECONNECT_DELAY = 0.1  # Seconds between retries
 
 msg = { "header":{ "from": "agonxheladini001@gmail.com", "from_type": "device", "to": "agonxheladini001@gmail.com", "to_type": "vue", "msg_type": "pong", "hardware_id": "48", "sensor_id":"40"}, "body":{ "action": "1" }}
